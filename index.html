@@ -46,8 +46,6 @@ h1{font-family:Lora,serif;font-weight:500;font-size:clamp(40px,12vw,54px);line-h
 .btn .t b{display:block;font-weight:600;font-size:18px}
 .btn .t small{display:block;font-weight:300;font-size:13px;color:var(--gl);margin-top:2px}
 .chev{width:22px;height:22px;color:var(--gold)}
-.badge{position:absolute;top:-10px;right:16px;font-size:11px;font-weight:600;letter-spacing:.04em;padding:3px 11px;border-radius:99px;color:#4a1442;background:linear-gradient(135deg,#ffe9df,#e8a98f)}
-.btn.rec{border-color:var(--gl);background:rgba(255,255,255,.13)}
 .note{font-weight:300;font-size:12.5px;color:rgba(255,241,238,.7);margin:20px auto 0;max-width:320px;line-height:1.5}
 .foot{margin-top:34px;font-weight:300;font-size:16px;line-height:1.6}
 @media (prefers-reduced-motion:reduce){.spark{animation:none}}
@@ -107,17 +105,6 @@ const LOCAL = {
   };
   for (const k in urls) document.getElementById(k).href = urls[k];
   document.getElementById("nome").textContent = LOCAL.nome;
-  const ua = navigator.userAgent || "";
-  const ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-  const android = /Android/.test(ua);
-  const rec = ios ? "apple" : (android ? "google" : null);
-  if (rec) {
-    const el = document.getElementById(rec);
-    el.classList.add("rec");
-    const b = document.createElement("span"); b.className = "badge"; b.textContent = "Recomendado";
-    el.appendChild(b);
-    el.parentNode.insertBefore(el, el.parentNode.firstChild);
-  }
 })();
 </script>
 </body>
